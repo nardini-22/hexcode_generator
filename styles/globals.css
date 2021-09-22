@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: main;
+    font-weight: 400;
+    src: url("/fonts/Poppins.woff2") format("woff2"),
+      url("/fonts/Poppins.woff") format("woff");
+  }
   * {
     box-sizing: border-box;
     margin: 0;
@@ -10,6 +16,7 @@
   }
   body {
     background: #0f1016;
+    font-family: "main", sans-serif;
   }
 }
 
@@ -22,5 +29,8 @@
     before:h-full before:w-full before:flex before:items-center before:justify-center after:absolute
     after:-left-1/2 after:-bottom-1/2 after:rounded-40 after:bg-primary after:h-4/2 after:w-4/2
     after:animate-spin after:box-border;
+  }
+  .btn {
+    @apply rounded-lg font-medium active:border flex justify-center items-center
   }
 }

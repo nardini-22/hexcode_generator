@@ -7,10 +7,13 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const [color, setColor] = useState(false);
   let generateHexcode = () => {
+    setColor(true);
     for (let i = 0; i < 6; i++) {
       hexCodeString += hexString[Math.floor(Math.random() * hexString.length)];
-      setHexCode(hexCodeString);
-      setColor(true);
+      setHexCode(hexCodeString.toUpperCase());
+      setTimeout(function () {
+        setColor(false);
+      }, 2000);
     }
   };
   const handleCopy = () => {
@@ -44,20 +47,18 @@ export default function Home() {
           <div className="border h-12 w-full border-dashed border-white my-5 flex justify-center items-center">
             {hexCode}
           </div>
-          <div className="flex justify-evenly">
+          <div className="flex">
             <button
               onClick={() => generateHexcode()}
-              className="w-44 mx-5 h-12 flex justify-center items-center text-primary active:text-secondary
-            bg-secondary rounded-lg active:bg-transparent active:border active:border-secondary font-medium 
-            outline-none"
+              className="btn w-44 mr-10 h-12 text-primary active:text-secondary bg-secondary 
+              active:bg-transparent active:border-secondary hover:bg-secondary-light"
             >
               Gerar
             </button>
             <button
               onClick={() => handleCopy()}
-              className="w-32 mx-5 h-12 flex justify-center items-center text-secondary active:text-primary 
-              bg-transparent rounded-lg border border-secondary active:bg-secondary active:border 
-              active:border-transparent font-medium outline-none"
+              className="btn w-32 ml-10 h-12  text-secondary active:text-primary bg-transparent 
+              border border-secondary active:bg-secondary active:border-transparent hover:bg-primary-light"
             >
               Copiar
             </button>
