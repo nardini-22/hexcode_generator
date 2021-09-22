@@ -12,3 +12,15 @@
     background: #0f1016;
   }
 }
+
+@layer components {
+  .colorFill {
+    @apply bg-secondary w-48 h-48 rounded-full;
+  }
+  .colorWave {
+    @apply rounded-full relative box-border text-white h-48 w-48 outline-none overflow-hidden
+    before:h-full before:w-full before:flex before:items-center before:justify-center after:absolute
+    after:-left-1/2 after:-bottom-1/2 after:rounded-40 after:bg-primary after:h-4/2 after:w-4/2
+    after:animate-spin after:box-border;
+  }
+}
