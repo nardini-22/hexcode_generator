@@ -20,7 +20,7 @@ module.exports = {
         12: "12px",
       },
       animation: {
-        spin: "spin 2.5s linear infinite",
+        spin: "spin 2.5s linear ",
       },
       keyframes: {
         spin: {

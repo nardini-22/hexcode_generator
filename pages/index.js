@@ -6,15 +6,19 @@ export default function Home() {
   const [hexCode, setHexCode] = useState("");
   const [copied, setCopied] = useState(false);
   const [color, setColor] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   let generateHexcode = () => {
     setColor(true);
+    setIsDisabled(true);
     for (let i = 0; i < 6; i++) {
       hexCodeString += hexString[Math.floor(Math.random() * hexString.length)];
       setHexCode(hexCodeString.toUpperCase());
-      setTimeout(function () {
-        setColor(false);
-      }, 2000);
     }
+    setTimeout(function () {
+      setColor(false);
+      setIsDisabled(false);
+    }, 2000);
+    console.log(isDisabled);
   };
   const handleCopy = () => {
     navigator.clipboard.writeText(`${hexCode}`);
@@ -44,12 +48,13 @@ export default function Home() {
               ></div>
             </div>
           </div>
-          <div className="border h-12 w-full border-dashed border-white my-5 flex justify-center items-center">
-            {hexCode}
+          <div className="border h-16 w-full border-dashed border-white my-5 flex justify-center items-center">
+            <p>{hexCode}</p>
           </div>
           <div className="flex">
             <button
               onClick={() => generateHexcode()}
+              disabled={isDisabled ? true : false}
               className="btn w-44 mr-10 h-12 text-primary active:text-secondary bg-secondary 
               active:bg-transparent active:border-secondary hover:bg-secondary-light"
             >
