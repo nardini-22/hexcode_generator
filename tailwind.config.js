@@ -36,7 +36,8 @@ module.exports = {
         secondary: {
           light: lighten(0.1, "#8305b4"),
           DEFAULT :"#8305b4",
-        }, 
+        },
+        alertColor: "#59585b" 
       },
     },
   },

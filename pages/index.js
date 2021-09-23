@@ -30,10 +30,10 @@ export default function Home() {
   return (
     <>
       <div
-        style={{ display: copied ? "block" : "none" }}
-        className="w-44 p-5 bg-primary absolute text-white right-0"
+        // style={{ display: copied ? "block" : "none" }}
+        className="w-44 m-2 p-5 bg-alertColor rounded-md absolute text-white right-0"
       >
-        Copiado para área de transferência!
+        Código copiado!
       </div>
       <div
         style={{ background: `${hexCode}` }}
