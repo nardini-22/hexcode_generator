@@ -31,6 +31,6 @@
     after:animate-spin after:box-border;
   }
   .btn {
-    @apply rounded-lg font-medium active:border flex justify-center items-center
+    @apply rounded-lg font-medium active:border flex justify-center items-center;
   }
 }
